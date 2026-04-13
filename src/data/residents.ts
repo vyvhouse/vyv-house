@@ -75,6 +75,21 @@ export const residents: Resident[] = [
     status: "current",
   },
   {
+    id: "soju06",
+    name: "Soju",
+    githubId: "Soju06",
+    githubUrl: "https://github.com/Soju06",
+    avatarUrl: "https://github.com/Soju06.png",
+    xHandle: "ssoooojuu",
+    xUrl: "https://x.com/ssoooojuu",
+    description:
+      "Mass token burner and API plumber. Builds tools that probably shouldn't exist — including a multi-account LLM load balancer, a Korean stock trading API, and unsigned kernel drivers.",
+    role: "Builder Resident",
+    tags: ["LLM", "developer tools", "systems"],
+    sortOrder: 7,
+    status: "current",
+  },
+  {
     id: "jeonghwan-park",
     name: "Jeonghwan Park",
     githubId: "StableFluffy",

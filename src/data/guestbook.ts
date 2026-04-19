@@ -79,4 +79,18 @@ export const guestbookEntries: GuestbookEntry[] = [
     tags: ["guestbook", "github", "x", "junho.io", "vyv.house"],
     status: "posted",
   },
+  {
+    id: "sigrid-jin",
+    name: "Sigrid Jin",
+    title: "Guest / Builder",
+    note:
+      "Hashed to the moon. Dropped a GitHub and X trace at vyv.house.",
+    githubHandle: "sigridjineth",
+    githubUrl: "https://github.com/sigridjineth",
+    avatarUrl: "https://github.com/sigridjineth.png",
+    xHandle: "realsigridjin",
+    xUrl: "https://x.com/realsigridjin",
+    tags: ["guestbook", "github", "x", "hashed", "vyv.house"],
+    status: "posted",
+  },
 ];

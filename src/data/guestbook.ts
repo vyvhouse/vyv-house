@@ -93,4 +93,17 @@ export const guestbookEntries: GuestbookEntry[] = [
     tags: ["guestbook", "github", "x", "hashed", "vyv.house"],
     status: "posted",
   },
+  {
+    id: "hyperblaze456",
+    name: "HyperBlaze",
+    title: "Guest / Builder",
+    note: "사교육의 종말 고하는 에이전트 과외 만들기",
+    githubHandle: "HyperBlaze456",
+    githubUrl: "https://github.com/HyperBlaze456",
+    avatarUrl: "https://github.com/HyperBlaze456.png",
+    xHandle: "HyperBlaze456",
+    xUrl: "https://x.com/HyperBlaze456",
+    tags: ["guestbook", "github", "x", "vyv.house"],
+    status: "posted",
+  },
 ];

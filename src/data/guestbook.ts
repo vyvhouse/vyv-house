@@ -106,4 +106,18 @@ export const guestbookEntries: GuestbookEntry[] = [
     tags: ["guestbook", "github", "x", "vyv.house"],
     status: "posted",
   },
+  {
+    id: "steven-shin",
+    name: "Steven Shin",
+    title: "Guest / Builder",
+    note:
+      "Visited vyv.house and saw one of the places where AI-native builders turn ideas into real experiments. Leaving a trace from the field.",
+    githubHandle: "berkshirehathaways",
+    githubUrl: "https://github.com/berkshirehathaways",
+    avatarUrl: "https://github.com/berkshirehathaways.png",
+    xHandle: "thatPKLguy",
+    xUrl: "https://x.com/thatPKLguy",
+    tags: ["guestbook", "github", "x", "AI-native", "builders", "vyv.house"],
+    status: "posted",
+  },
 ];

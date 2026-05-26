@@ -131,7 +131,7 @@ export const guestbookEntries: GuestbookEntry[] = [
     avatarUrl: "https://github.com/islee23520.png",
     xHandle: "iz_23520",
     xUrl: "https://x.com/iz_23520",
-    tags: ["guestbook", "github", "x", "vyv.house"],
+    tags: ["guestbook", "github", "x", "game dev", "vyv.house"],
     status: "posted",
   },
 ];

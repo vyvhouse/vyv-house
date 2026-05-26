@@ -121,6 +121,20 @@ export const guestbookEntries: GuestbookEntry[] = [
     status: "posted",
   },
   {
+    id: "junghwan-na",
+    name: "JungHwan NA",
+    title: "Guest / Builder",
+    note:
+      "Working on open-source agent-harness internals and MCP servers. Left a trace at vyv.house.",
+    githubHandle: "shaun0927",
+    githubUrl: "https://github.com/shaun0927",
+    avatarUrl: "https://github.com/shaun0927.png",
+    xHandle: "JunghwanNa_ooo",
+    xUrl: "https://x.com/JunghwanNa_ooo",
+    tags: ["guestbook", "github", "x", "open source", "agent harness", "mcp", "vyv.house"],
+    status: "posted",
+  },
+  {
     id: "islee23520",
     name: "iz",
     title: "Guest / Builder",

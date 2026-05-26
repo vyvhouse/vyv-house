@@ -466,7 +466,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-4 text-sm text-white/55">
-            <a href="https://github.com/seojoonkim/vyv-house" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a>
+            <a href="https://github.com/vyvhouse/vyv-house" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a>
             <a href="https://x.com/simonkim_nft" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">X</a>
             <a href="mailto:hello@vyv.house" className="hover:text-white transition-colors">Contact</a>
           </div>

@@ -134,4 +134,18 @@ export const guestbookEntries: GuestbookEntry[] = [
     tags: ["guestbook", "github", "x", "open source", "agent harness", "mcp", "vyv.house"],
     status: "posted",
   },
+  {
+    id: "islee23520",
+    name: "iz",
+    title: "Guest / Builder",
+    note:
+      "I want to conquer the game — and build one with just a click. Dropped a GitHub trace at vyv.house.",
+    githubHandle: "islee23520",
+    githubUrl: "https://github.com/islee23520",
+    avatarUrl: "https://github.com/islee23520.png",
+    xHandle: "iz_23520",
+    xUrl: "https://x.com/iz_23520",
+    tags: ["guestbook", "github", "x", "game dev", "vyv.house"],
+    status: "posted",
+  },
 ];

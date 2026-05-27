@@ -1,6 +1,9 @@
 import { residents } from "@/data/residents";
 import { guestbookEntries } from "@/data/guestbook";
-import { House, Mail, MapPin, Sparkles, Users, ArrowUpRight, NotebookPen, Globe2, Camera, CalendarDays } from "lucide-react";
+import { House, Mail, MapPin, Sparkles, Users, ArrowUpRight, NotebookPen, Globe2, Camera } from "lucide-react";
+import { EventsCalendar } from "./EventsCalendar";
+import { PastEventsGrid } from "./PastEventsGrid";
+import { fetchPastEvents } from "@/lib/luma";
 
 function GitHubIcon({ className = "h-3.5 w-3.5" }: { className?: string }) {
   return (
@@ -80,7 +83,8 @@ const contactItems = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const pastEvents = await fetchPastEvents();
   return (
     <main className="relative overflow-hidden bg-[#060708] text-[#f3f4f6]">
       <div className="pointer-events-none absolute inset-0 soft-grid opacity-[0.14]" />
@@ -426,45 +430,7 @@ export default function Home() {
       </section>
 
       <section id="events" className="site-container px-5 pt-8 pb-16 md:px-8 md:pt-12 md:pb-24">
-        <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
-          <div>
-            <div className="editorial-kicker editorial-kicker-pink signal-kicker-pink mb-5">events / calendar</div>
-            <h2 className="font-display text-4xl tracking-[-0.03em] md:text-6xl">
-              what is <span className="highlight-block-pink signal-highlight-pink">happening next</span>
-            </h2>
-            <p className="mt-5 max-w-xl text-sm leading-6 text-white/65 md:text-base">
-              Upcoming dinners, demo nights, and resident sprints. Powered by the
-              <span className="text-white/80"> vyv.house</span> calendar on Luma — RSVP directly from the embed.
-            </p>
-            <div className="mt-6 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.24em] text-white/42">
-              <CalendarDays size={14} className="text-[#ff3b7c]" />
-              live from luma
-            </div>
-            <a
-              href="https://luma.com/vyvhouse"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-6 inline-flex items-center gap-2 border border-white/12 px-4 py-2 text-sm font-medium text-white transition hover:border-[#ff3b7c]/55 hover:text-[#ff3b7c]"
-              style={{ borderRadius: "var(--radius-button)" }}
-            >
-              Open on Luma
-              <ArrowUpRight size={16} />
-            </a>
-          </div>
-
-          <div className="events-frame">
-            <iframe
-              src="https://luma.com/embed/calendar/cal-hHz7R98dsv1Lf3z/events?lt=dark"
-              className="events-iframe"
-              loading="lazy"
-              allowFullScreen
-              aria-hidden="false"
-              tabIndex={0}
-              title="vyv.house events calendar"
-            />
-            <div className="events-frame-noise" aria-hidden="true" />
-          </div>
-        </div>
+        <EventsCalendar pastSlot={<PastEventsGrid events={pastEvents} />} />
       </section>
 
       <section id="join" className="site-container px-5 pt-8 pb-16 md:px-8 md:pt-12 md:pb-24">

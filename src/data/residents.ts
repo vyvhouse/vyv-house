@@ -42,7 +42,7 @@ export const residents: Resident[] = [
     description:
       "Software engineer building across product code, JavaScript tooling, and practical backend infrastructure from Seoul.",
     role: "Builder Resident",
-    tags: ["JavaScript", "backend", "infrastructure"],
+    tags: ["JavaScript", "frontend", "infrastructure"],
     sortOrder: 3,
     status: "current",
   },

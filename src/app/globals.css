@@ -148,6 +148,18 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .signal-note p span { color:var(--acid); }
 .signal-note small { max-width:25ch;color:#969b90;line-height:1.6; }
 
+/* House principles */
+.house-principles { padding:var(--section) var(--gutter);border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);background:var(--black);color:var(--paper); }
+.house-principles-shell { width:min(100%,1320px);margin-inline:auto; }
+.house-principles-head { padding-bottom:16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line-dark);color:#777c71;font:600 8px/1 var(--font-mono);letter-spacing:.12em; }
+.house-principles-head span:first-child { color:var(--acid); }
+.house-principles ol { list-style:none;margin:clamp(38px,4vw,64px) 0 0;padding:0; }
+.house-principles li { min-height:clamp(104px,9vw,142px);display:grid;grid-template-columns:72px minmax(0,1fr) minmax(180px,.34fr);align-items:center;gap:28px;border-bottom:1px solid var(--line-dark); }
+.house-principles li:first-child { border-top:1px solid var(--line-dark); }
+.house-principles li>span { color:var(--acid);font:600 9px/1 var(--font-mono); }
+.house-principles li p { margin:0;font-size:clamp(2rem,4vw,4.6rem);font-weight:700;line-height:.92;letter-spacing:-.065em; }
+.house-principles li small { max-width:24ch;justify-self:end;color:#7f8479;font-size:12px;line-height:1.55;text-align:right; }
+
 /* Residents */
 .residents-section { background:#f7f7f4; }
 .residents-section>* { width:min(100%,1320px);margin-inline:auto; }
@@ -272,6 +284,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .proof-strip>div:nth-child(2){border-right:0}.proof-strip>div:nth-child(-n+2){border-bottom:1px solid var(--line)}
   .house-signal { grid-template-columns:1fr; }
   .signal-note { min-height:420px;border-left:0;border-top:1px solid var(--line-dark); }
+  .house-principles li { grid-template-columns:52px minmax(0,1fr);gap:20px; }
+  .house-principles li small { grid-column:2;justify-self:start;padding-bottom:24px;text-align:left; }
   .resident-row,.resident-row:first-child,.resident-row:nth-last-child(-n+2){grid-column:span 6}
   .resident-row:last-child:nth-child(odd) { grid-column:1/-1; }
   .log-grid { grid-template-columns:repeat(2,1fr); }
@@ -301,6 +315,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .manifesto-grid h2,.section-heading h2 { font-size:3.5rem; }
   .house-signal,.signal-media { min-height:490px; }
   .signal-note { min-height:350px;padding:42px 24px; }
+  .house-principles { padding:82px 20px; }
+  .house-principles li { min-height:0;padding:24px 0;grid-template-columns:32px minmax(0,1fr);gap:12px; }
+  .house-principles li p { font-size:clamp(1.85rem,9vw,2.7rem);line-height:.96; }
+  .house-principles li small { padding:0 0 0; }
   .resident-list { grid-template-columns:1fr; }
   .resident-row,.resident-row:first-child,.resident-row:nth-last-child(-n+2){grid-column:1;min-height:0;padding:22px}
   .resident-row:last-child:nth-child(odd) { grid-column:1; }

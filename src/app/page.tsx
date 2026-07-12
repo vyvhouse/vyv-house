@@ -2,6 +2,7 @@ import { ContactAndFooter } from "@/components/home/Footer";
 import { Guestbook } from "@/components/home/Guestbook";
 import { Header } from "@/components/home/Header";
 import { Hero } from "@/components/home/Hero";
+import { HousePrinciples } from "@/components/home/HousePrinciples";
 import { Protocol } from "@/components/home/Protocol";
 import { Residents } from "@/components/home/Residents";
 import { SectionLabel } from "@/components/home/Brand";
@@ -32,6 +33,7 @@ export default async function Home({
       <Header lang={lang} />
       <Hero residentCount={residents.length} lang={lang} />
       <Story lang={lang} />
+      <HousePrinciples lang={lang} />
       <Residents residents={residents} lang={lang} />
       <Guestbook entries={guestbookEntries} lang={lang} />
       <Protocol lang={lang} />

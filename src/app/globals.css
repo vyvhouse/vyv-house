@@ -252,11 +252,16 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .contact-mail svg { transition:transform .2s ease; }
 .contact-details { margin-top:25px;display:flex;flex-wrap:wrap;gap:28px;font:600 9px/1 var(--font-mono); }
 .contact-details span { display:flex;align-items:center;gap:8px; }
-.system-footer { min-height:170px;padding:34px var(--gutter);display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;background:var(--black);color:var(--paper); }
+.system-footer { min-height:190px;padding:34px var(--gutter);display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;background:var(--black);color:var(--paper); }
 .system-footer .wordmark-vyv,.system-footer .wordmark-house { color:#fff; }
 .system-footer .wordmark-dot { color:var(--acid); }
+.footer-brand { justify-self:start;display:flex;flex-direction:column;align-items:flex-start; }
+.footer-partner { min-width:142px;margin-top:17px;padding-top:13px;display:flex;align-items:center;gap:10px;border-top:1px solid var(--line-dark); }
+.footer-partner::before { content:"";width:5px;height:5px;flex:0 0 auto;background:var(--acid); }
+.footer-partner span { color:#6f746a;font:600 7px/1 var(--font-mono);letter-spacing:.11em;text-transform:uppercase;white-space:nowrap; }
+.footer-partner img { width:auto;height:15px;opacity:.82;object-fit:contain; }
 .system-footer p { color:#777c71;text-align:center;font-size:11px; }
-.system-footer>div:last-child { justify-self:end;display:flex;gap:18px;font:600 9px/1 var(--font-mono);text-transform:uppercase; }
+.footer-links { justify-self:end;display:flex;gap:18px;font:600 9px/1 var(--font-mono);text-transform:uppercase; }
 .system-footer a { display:flex;align-items:center;gap:6px; }
 
 @media (max-width:1000px) {
@@ -311,7 +316,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .contact-details { flex-direction:column;gap:15px; }
   .system-footer { padding:44px 20px;grid-template-columns:1fr;gap:24px; }
   .system-footer p { text-align:left; }
-  .system-footer>div:last-child { justify-self:start; }
+  .footer-links { justify-self:start; }
 }
 
 @media (prefers-reduced-motion:reduce) {

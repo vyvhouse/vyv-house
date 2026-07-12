@@ -27,7 +27,7 @@ export const residents: Resident[] = [
     description:
       "Software engineer exploring developer tooling, local-serving workflows, and practical AI systems.",
     role: "Builder Resident",
-    tags: ["developer tools", "AI", "systems"],
+    tags: ["AI", "developer tools", "systems"],
     sortOrder: 2,
     status: "current",
   },

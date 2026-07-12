@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Inter } from "next/font/google";
+import { IBM_Plex_Mono, Inter, Noto_Serif_KR } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -12,6 +12,12 @@ const ibmPlexMono = IBM_Plex_Mono({
   variable: "--font-ibm-plex-mono",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const notoSerifKr = Noto_Serif_KR({
+  variable: "--font-korean-serif",
+  weight: "700",
+  preload: false,
 });
 
 const metaTitle = "VYV House — Live close. Build with focus.";
@@ -63,7 +69,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${ibmPlexMono.variable} antialiased`}
+      className={`${inter.variable} ${ibmPlexMono.variable} ${notoSerifKr.variable} antialiased`}
     >
       <body
         className="min-h-screen"

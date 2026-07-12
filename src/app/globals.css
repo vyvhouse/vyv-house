@@ -273,6 +273,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .house-signal { grid-template-columns:1fr; }
   .signal-note { min-height:420px;border-left:0;border-top:1px solid var(--line-dark); }
   .resident-row,.resident-row:first-child,.resident-row:nth-last-child(-n+2){grid-column:span 6}
+  .resident-row:last-child:nth-child(odd) { grid-column:1/-1; }
   .log-grid { grid-template-columns:repeat(2,1fr); }
   .rhythm-grid { grid-template-columns:repeat(2,1fr); }
   .rhythm-grid>div:nth-child(2){border-right:0}.rhythm-grid>div:nth-child(-n+2){border-bottom:1px solid var(--line-dark)}
@@ -302,6 +303,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .signal-note { min-height:350px;padding:42px 24px; }
   .resident-list { grid-template-columns:1fr; }
   .resident-row,.resident-row:first-child,.resident-row:nth-last-child(-n+2){grid-column:1;min-height:0;padding:22px}
+  .resident-row:last-child:nth-child(odd) { grid-column:1; }
   .log-grid { grid-template-columns:1fr; }
   .log-entry { min-height:300px; }
   .protocol-list li { grid-template-columns:34px 1fr 20px;gap:13px; }

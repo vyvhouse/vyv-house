@@ -1,4 +1,5 @@
 import { ArrowUpRight, Copy, MapPin } from "lucide-react";
+import { HouseGallery } from "./HouseGallery";
 
 export function Hero({ residentCount }: { residentCount: number }) {
   return (
@@ -27,9 +28,9 @@ export function Hero({ residentCount }: { residentCount: number }) {
             <div className="stage-location"><MapPin size={14} /> Seoul, South Korea</div>
           </div>
           <div className="cursor-stage-media">
-            <video src="/hero-video.mp4" autoPlay muted loop playsInline aria-label="Life and work at VYV House" />
+            <HouseGallery />
             <div className="media-wash" />
-            <div className="media-label"><span>LIVE FROM THE HOUSE</span><span>REC ●</span></div>
+            <div className="media-label"><span>LIVE FROM THE HOUSE</span><span>FRAME_001—004</span></div>
             <a href="#residents" className="media-cta">Meet the residents <ArrowUpRight size={15} /></a>
           </div>
         </div>

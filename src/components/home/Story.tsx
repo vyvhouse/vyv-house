@@ -17,7 +17,11 @@ export function Story() {
       </section>
       <section className="house-signal" aria-label="Life at VYV House">
         <div className="signal-media">
-          <Image src="/signal-left.jpg" alt="A late night working session at VYV House" fill sizes="(max-width: 900px) 100vw, 58vw" />
+          <div className="signal-collage">
+            <figure className="collage-main"><Image src="/photos/house-table.webp" alt="Friends gathered around the long table at VYV House" fill sizes="(max-width: 900px) 100vw, 45vw" /></figure>
+            <figure className="collage-top"><Image src="/photos/house-workstation.webp" alt="A workstation running projects at VYV House" fill sizes="(max-width: 900px) 50vw, 22vw" /></figure>
+            <figure className="collage-bottom"><Image src="/photos/house-demo-group.webp" alt="Builders together after a demo at VYV House" fill sizes="(max-width: 900px) 50vw, 22vw" /></figure>
+          </div>
           <div className="image-stamp">CAPTURE_001 / HOUSE IN MOTION</div>
         </div>
         <div className="signal-note"><Radio size={18} /><p>Part home,<br />part lab,<br /><span>always alive.</span></p><small>Experiments, conversations, and shared context accumulate here.</small></div>

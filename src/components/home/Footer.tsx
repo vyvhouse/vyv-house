@@ -20,13 +20,11 @@ export function ContactAndFooter({ lang }: { lang: Language }) {
       <footer className="system-footer">
         <div className="footer-shell">
           <Wordmark />
-          <div className="footer-center">
-            <p>{copy.footer}</p>
-            <div className="footer-partner">
-              <span>Powered by</span>
-              <Image src="/hashed-logo-transparent.png" alt="Hashed" width={1280} height={324} />
-            </div>
+          <div className="footer-partner">
+            <span>Powered by</span>
+            <Image src="/hashed-logo-transparent.png" alt="Hashed" width={1280} height={324} />
           </div>
+          <p className="footer-tagline">{copy.footer}</p>
           <div className="footer-links"><a href="https://github.com/vyvhouse/vyv-house" target="_blank" rel="noreferrer">GitHub</a><a href="mailto:hello@vyv.house"><Mail size={14} /> {siteCopy[lang].nav.contact}</a></div>
         </div>
       </footer>

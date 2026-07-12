@@ -255,15 +255,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .contact-details { margin-top:0;padding-top:22px;display:flex;flex-wrap:wrap;gap:18px 32px;font:600 9px/1 var(--font-mono); }
 .contact-details span { display:flex;align-items:center;gap:8px; }
 .system-footer { min-height:170px;padding:34px var(--gutter);background:var(--black);color:var(--paper); }
-.footer-shell { min-height:102px;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center; }
+.footer-shell { min-height:102px;display:grid;grid-template-areas:"brand tagline links" "partner . .";grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto auto;align-content:center;align-items:center;row-gap:11px; }
 .system-footer .wordmark-vyv,.system-footer .wordmark-house { color:#fff; }
 .system-footer .wordmark-dot { color:var(--acid); }
-.footer-center { justify-self:center;display:flex;flex-direction:column;align-items:center;gap:11px; }
-.footer-center p { margin:0;color:#777c71;text-align:center;font-size:11px; }
-.footer-partner { display:flex;align-items:center;gap:7px; }
+.footer-shell>.wordmark { grid-area:brand;align-self:center; }
+.footer-tagline { grid-area:tagline;justify-self:center;margin:0;color:#777c71;text-align:center;font-size:11px; }
+.footer-partner { grid-area:partner;justify-self:start;display:flex;align-items:center;gap:7px; }
 .footer-partner span { color:#5f645b;font:600 6px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap; }
 .footer-partner img { width:auto;height:10px;opacity:.62;object-fit:contain; }
-.footer-links { justify-self:end;display:flex;gap:18px;font:600 9px/1 var(--font-mono);text-transform:uppercase; }
+.footer-links { grid-area:links;justify-self:end;display:flex;gap:18px;font:600 9px/1 var(--font-mono);text-transform:uppercase; }
 .system-footer a { display:flex;align-items:center;gap:6px; }
 
 @media (max-width:1000px) {
@@ -318,9 +318,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .contact-mail { font-size:1.28rem; }
   .contact-details { flex-direction:column;gap:15px; }
   .system-footer { padding:44px 20px; }
-  .footer-shell { grid-template-columns:1fr;gap:24px; }
-  .footer-center { justify-self:start;align-items:flex-start; }
-  .footer-center p { text-align:left; }
+  .footer-shell { grid-template-areas:"brand" "partner" "tagline" "links";grid-template-columns:1fr;gap:13px; }
+  .footer-tagline { justify-self:start;text-align:left; }
   .footer-links { justify-self:start; }
 }
 

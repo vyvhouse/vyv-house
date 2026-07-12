@@ -18,9 +18,6 @@ export function Header({ lang }: { lang: Language }) {
           <Link href="/" className={lang === "en" ? "is-active" : undefined} aria-current={lang === "en" ? "page" : undefined}>EN</Link>
           <Link href="/?lang=ko" className={lang === "ko" ? "is-active" : undefined} aria-current={lang === "ko" ? "page" : undefined}>KO</Link>
         </div>
-        <a href="https://github.com/vyvhouse/vyv-house" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="mailto:hello@vyv.house" className="nav-contact">{copy.contact}</a>
-        <a href="#residents" className="nav-primary">{copy.meet}</a>
       </div>
     </header>
   );

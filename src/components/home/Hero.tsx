@@ -1,6 +1,7 @@
 import { ArrowUpRight, Copy, MapPin } from "lucide-react";
 import { HouseGallery } from "./HouseGallery";
 import { siteCopy, type Language } from "@/lib/i18n";
+import Link from "next/link";
 
 export function Hero({ residentCount, lang }: { residentCount: number; lang: Language }) {
   const { hero, proof } = siteCopy[lang];
@@ -33,7 +34,9 @@ export function Hero({ residentCount, lang }: { residentCount: number; lang: Lan
             <HouseGallery />
             <div className="media-wash" />
             <div className="media-label"><span>LIVE FROM THE HOUSE</span><span>FRAME_001—004</span></div>
-            <a href="#residents" className="media-cta">{hero.cta} <ArrowUpRight size={15} /></a>
+            <Link href={lang === "ko" ? "/album?lang=ko" : "/album"} className="media-cta">
+              {hero.cta} <ArrowUpRight size={15} />
+            </Link>
           </div>
         </div>
       </section>

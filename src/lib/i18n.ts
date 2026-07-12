@@ -5,7 +5,7 @@ export const siteCopy = {
     nav: { residents: "Residents", protocol: "Protocol", events: "Events", guestbook: "Guestbook", contact: "Contact", meet: "Meet the house" },
     hero: {
       label: "VYV HOUSE", title: "Live close.", subtitle: "Build with focus.", description: "A builder residency in Seoul.",
-      online: "residents online", headline: "Build alongside people who care about the work.", body: "Shared meals, direct feedback, deep focus, and enough room for ambitious ideas to become real.", location: "Seoul, South Korea", cta: "Meet the residents",
+      online: "residents online", headline: "Build alongside people who care about the work.", body: "Shared meals, direct feedback, deep focus, and enough room for ambitious ideas to become real.", location: "Seoul, South Korea", cta: "View the album",
     },
     proof: { format: "format", residents: "residents", location: "operating from", status: "status", residency: "Builder residency", people: "people in process", city: "Seoul, South Korea", open: "Open to collabs" },
     story: { headline: "A house should make good work easier.", p1: "We believe proximity creates momentum—not through mandatory networking, but through shared meals, direct feedback, and enough quiet to do the work.", p2: "VYV is intentionally small. Residents bring a project, respect the house, and leave something useful behind.", signal: ["Part home,", "part lab,", "always alive."], signalBody: "Experiments, conversations, and shared context accumulate here." },
@@ -33,7 +33,7 @@ export const siteCopy = {
     nav: { residents: "거주자", protocol: "생활 원칙", events: "이벤트", guestbook: "방명록", contact: "연락하기", meet: "하우스 둘러보기" },
     hero: {
       label: "VYV HOUSE", title: "가까이 살고.", subtitle: "깊이 몰입합니다.", description: "서울의 빌더 레지던시.",
-      online: "명이 함께하는 중", headline: "좋은 작업을 진심으로 대하는 사람들과 함께 만드세요.", body: "함께 식사하고, 솔직히 피드백하고, 깊이 몰입하며, 큰 아이디어가 현실이 될 충분한 공간을 나눕니다.", location: "대한민국 서울", cta: "거주자 만나기",
+      online: "명이 함께하는 중", headline: "좋은 작업을 진심으로 대하는 사람들과 함께 만드세요.", body: "함께 식사하고, 솔직히 피드백하고, 깊이 몰입하며, 큰 아이디어가 현실이 될 충분한 공간을 나눕니다.", location: "대한민국 서울", cta: "앨범 보기",
     },
     proof: { format: "형태", residents: "거주자", location: "위치", status: "상태", residency: "빌더 레지던시", people: "명이 만드는 중", city: "대한민국 서울", open: "협업 열려 있음" },
     story: { headline: "집은 좋은 작업을 더 쉽게 만들어야 합니다.", p1: "우리는 가까이 지내는 데서 추진력이 생긴다고 믿습니다. 억지스러운 네트워킹이 아니라 함께하는 식사, 솔직한 피드백, 그리고 작업에 집중할 충분한 고요함을 통해서요.", p2: "VYV는 의도적으로 작게 운영합니다. 거주자는 움직이고 싶은 프로젝트를 가져오고, 집을 존중하며, 다음 사람에게 유용한 무언가를 남깁니다.", signal: ["집이자,", "연구실이고,", "늘 살아 있는 곳."], signalBody: "실험과 대화, 함께 쌓은 맥락이 이곳에 축적됩니다." },

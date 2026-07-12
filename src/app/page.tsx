@@ -11,7 +11,7 @@ import { residents } from "@/data/residents";
 import { fetchPastEvents, fetchUpcomingEvents } from "@/lib/luma";
 import type { Language } from "@/lib/i18n";
 import { EventGallery } from "@/components/home/EventGallery";
-import { EventsCalendar } from "./EventsCalendar";
+import { EventsShowcase } from "./EventsShowcase";
 
 export default async function Home({
   searchParams,
@@ -24,6 +24,8 @@ export default async function Home({
     fetchUpcomingEvents(),
     fetchPastEvents(),
   ]);
+  const eventMode = upcomingEvents.length > 0 ? "upcoming" : "past";
+  const displayedEvents = eventMode === "upcoming" ? upcomingEvents : pastEvents;
 
   return (
     <main id="top" className="living-system" lang={lang}>
@@ -35,11 +37,10 @@ export default async function Home({
       <Protocol lang={lang} />
       <section id="events" className="system-section events-section">
         <SectionLabel index="04">RUNTIME / EVENTS</SectionLabel>
-        <EventsCalendar
+        <EventsShowcase
           lang={lang}
-          hasUpcoming={upcomingEvents.length > 0}
-          upcomingSlot={<EventGallery events={upcomingEvents} lang={lang} emptyState="upcoming" />}
-          pastSlot={<EventGallery events={pastEvents} lang={lang} emptyState="past" />}
+          mode={eventMode}
+          eventsSlot={<EventGallery events={displayedEvents} lang={lang} emptyState={eventMode} />}
         />
       </section>
       <ContactAndFooter lang={lang} />

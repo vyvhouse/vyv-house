@@ -21,7 +21,6 @@ export function Residents({ residents, lang }: { residents: Resident[]; lang: La
                 <img src={resident.avatarUrl} alt="" width="64" height="64" loading="lazy" />
                 <div><span className="resident-index">RESIDENT_{String(index + 1).padStart(2, "0")}</span><h3>{resident.name}</h3><a href={resident.githubUrl} target="_blank" rel="noreferrer">@{resident.githubId}</a></div>
               </div>
-              <div className="resident-state"><span className="status-dot" /> {copy.active}</div>
             </div>
             <div className="resident-role">{lang === "ko" ? residentCopyKo[resident.id]?.role ?? resident.role ?? "거주자" : resident.role ?? "Resident"}</div>
             <p className="resident-description">{lang === "ko" ? residentCopyKo[resident.id]?.description ?? resident.description : resident.description}</p>

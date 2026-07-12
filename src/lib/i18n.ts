@@ -9,7 +9,7 @@ export const siteCopy = {
     },
     proof: { format: "format", residents: "residents", location: "operating from", status: "status", residency: "Builder residency", people: "people in process", city: "Seoul, South Korea", open: "Open to collabs" },
     story: { headline: "A house should make good work easier.", p1: "We believe proximity creates momentum—not through mandatory networking, but through shared meals, direct feedback, and enough quiet to do the work.", p2: "VYV is intentionally small. Residents bring a project, respect the house, and leave something useful behind.", signal: ["Part home,", "part lab,", "always alive."], signalBody: "Experiments, conversations, and shared context accumulate here." },
-    residents: { kicker: "RUNNING PROCESSES", headline: "People building from the house.", body: "Real people, real work. Follow the source, inspect what they are making, or come say hello.", online: "residents online", active: "Active", areas: "Areas of work" },
+    residents: { kicker: "RUNNING PROCESSES", headline: "People building from the house.", body: "Real people, real work. Follow the source, inspect what they are making, or come say hello.", online: "residents online", areas: "Areas of work" },
     guestbook: { kicker: "APPEND-ONLY MEMORY", headline: "Notes left at the house.", body: "Every visitor changes the room a little. These are traces from builders who passed through.", status: "STATUS / POSTED", guest: "Guest" },
     protocol: {
       kicker: "HOW WE OPERATE", headline: "Small rules for a high-trust room.", body: "No grand manifesto. Just a few defaults that make living and building together work.",
@@ -37,7 +37,7 @@ export const siteCopy = {
     },
     proof: { format: "형태", residents: "거주자", location: "위치", status: "상태", residency: "빌더 레지던시", people: "명이 만드는 중", city: "대한민국 서울", open: "협업 열려 있음" },
     story: { headline: "집은 좋은 작업을 더 쉽게 만들어야 합니다.", p1: "우리는 가까이 지내는 데서 추진력이 생긴다고 믿습니다. 억지스러운 네트워킹이 아니라 함께하는 식사, 솔직한 피드백, 그리고 작업에 집중할 충분한 고요함을 통해서요.", p2: "VYV는 의도적으로 작게 운영합니다. 거주자는 움직이고 싶은 프로젝트를 가져오고, 집을 존중하며, 다음 사람에게 유용한 무언가를 남깁니다.", signal: ["집이자,", "연구실이고,", "늘 살아 있는 곳."], signalBody: "실험과 대화, 함께 쌓은 맥락이 이곳에 축적됩니다." },
-    residents: { kicker: "진행 중인 사람들", headline: "이 집에서 만드는 사람들.", body: "실제 사람과 실제 작업을 소개합니다. 무엇을 만들고 있는지 살펴보고 편하게 인사해 주세요.", online: "명이 함께하는 중", active: "활동 중", areas: "작업 분야" },
+    residents: { kicker: "진행 중인 사람들", headline: "이 집에서 만드는 사람들.", body: "실제 사람과 실제 작업을 소개합니다. 무엇을 만들고 있는지 살펴보고 편하게 인사해 주세요.", online: "명이 함께하는 중", areas: "작업 분야" },
     guestbook: { kicker: "차곡차곡 쌓이는 기억", headline: "하우스에 남겨진 기록.", body: "모든 방문자는 공간을 조금씩 바꿉니다. 이곳을 지나간 빌더들이 남긴 흔적입니다.", status: "상태 / 게시됨", guest: "방문자" },
     protocol: {
       kicker: "우리가 함께하는 방식", headline: "신뢰 높은 공간을 위한 작은 원칙.", body: "거창한 선언은 없습니다. 함께 살고 만들기 위해 필요한 몇 가지 기본값만 둡니다.",

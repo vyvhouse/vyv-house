@@ -260,9 +260,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .system-footer .wordmark-dot { color:var(--acid); }
 .footer-shell>.wordmark { grid-area:brand;align-self:center; }
 .footer-tagline { grid-area:tagline;justify-self:center;margin:0;color:#777c71;text-align:center;font-size:11px; }
-.footer-partner { grid-area:partner;justify-self:start;display:flex;align-items:center;gap:7px; }
-.footer-partner span { color:#5f645b;font:600 6px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap; }
-.footer-partner img { width:auto;height:10px;opacity:.62;object-fit:contain; }
+.footer-partner { grid-area:partner;justify-self:start;display:flex;align-items:center;gap:8px; }
+.footer-partner span { color:#6c7167;font:600 7px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap; }
+.footer-partner img { width:auto;height:13px;opacity:.74;object-fit:contain; }
 .footer-links { grid-area:links;justify-self:end;display:flex;gap:18px;font:600 9px/1 var(--font-mono);text-transform:uppercase; }
 .system-footer a { display:flex;align-items:center;gap:6px; }
 

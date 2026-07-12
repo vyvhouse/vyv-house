@@ -13,14 +13,14 @@ export function ContactAndFooter({ lang }: { lang: Language }) {
         <div className="contact-details"><span><MapPin size={15} /> {copy.location}</span><span><Users size={15} /> {copy.listed}</span><span><House size={15} /> {copy.visits}</span></div>
       </section>
       <footer className="system-footer">
-        <div className="footer-brand">
-          <Wordmark />
+        <Wordmark />
+        <div className="footer-center">
+          <p>{copy.footer}</p>
           <div className="footer-partner">
             <span>Powered by</span>
             <Image src="/hashed-logo-transparent.png" alt="Hashed" width={1280} height={324} />
           </div>
         </div>
-        <p>{copy.footer}</p>
         <div className="footer-links"><a href="https://github.com/vyvhouse/vyv-house" target="_blank" rel="noreferrer">GitHub</a><a href="mailto:hello@vyv.house"><Mail size={14} /> {siteCopy[lang].nav.contact}</a></div>
       </footer>
     </>

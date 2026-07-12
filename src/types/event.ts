@@ -1,4 +1,4 @@
-export type PastEvent = {
+export type CalendarEvent = {
   id: string;
   name: string;
   /** Luma short slug, e.g. "u0ijkpby" → https://luma.com/u0ijkpby */

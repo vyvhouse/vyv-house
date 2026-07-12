@@ -1,17 +1,19 @@
 import Image from "next/image";
 import { Radio } from "lucide-react";
 import { SectionLabel } from "./Brand";
+import { siteCopy, type Language } from "@/lib/i18n";
 
-export function Story() {
+export function Story({ lang }: { lang: Language }) {
+  const copy = siteCopy[lang].story;
   return (
     <>
       <section className="manifesto-section">
         <SectionLabel index="00">README.md</SectionLabel>
         <div className="manifesto-grid">
-          <h2>A house should make<br />good work <em>easier.</em></h2>
+          <h2>{lang === "en" ? <>A house should make<br />good work <em>easier.</em></> : <>집은 좋은 작업을<br /><em>더 쉽게</em> 만들어야 합니다.</>}</h2>
           <div className="manifesto-copy">
-            <p>We believe proximity creates momentum—not through mandatory networking, but through shared meals, direct feedback, and enough quiet to do the work.</p>
-            <p>VYV is intentionally small. Residents bring a project, respect the house, and leave something useful behind.</p>
+            <p>{copy.p1}</p>
+            <p>{copy.p2}</p>
           </div>
         </div>
       </section>
@@ -24,7 +26,7 @@ export function Story() {
           </div>
           <div className="image-stamp">CAPTURE_001 / HOUSE IN MOTION</div>
         </div>
-        <div className="signal-note"><Radio size={18} /><p>Part home,<br />part lab,<br /><span>always alive.</span></p><small>Experiments, conversations, and shared context accumulate here.</small></div>
+        <div className="signal-note"><Radio size={18} /><p>{copy.signal[0]}<br />{copy.signal[1]}<br /><span>{copy.signal[2]}</span></p><small>{copy.signalBody}</small></div>
       </section>
     </>
   );

@@ -2,54 +2,44 @@
 
 import { useState, type ReactNode } from "react";
 import { ArrowUpRight, CalendarDays, History } from "lucide-react";
+import { siteCopy, type Language } from "@/lib/i18n";
 
 const CAL_ID = "cal-hHz7R98dsv1Lf3z";
 const UPCOMING_EMBED_URL = `https://luma.com/embed/calendar/${CAL_ID}/events?lt=dark`;
 
 type EventsTab = "upcoming" | "past";
 
-const TABS: Array<{
+type Tab = {
   id: EventsTab;
   label: string;
   kicker: string;
   copy: string;
   publicUrl: string;
   icon: typeof CalendarDays;
-}> = [
-  {
-    id: "upcoming",
-    label: "Upcoming",
-    kicker: "live from luma",
-    copy: "Upcoming dinners, demo nights, and resident sprints. RSVP straight from the embed.",
-    publicUrl: "https://luma.com/vyvhouse",
-    icon: CalendarDays,
-  },
-  {
-    id: "past",
-    label: "Past",
-    kicker: "what already happened",
-    copy: "A running log of nights, jams, and gatherings that have already gone down at vyv.house.",
-    publicUrl: "https://luma.com/vyvhouse?period=past",
-    icon: History,
-  },
-];
+};
 
 type Props = {
   /** Server-rendered grid of past events, passed in from the page Server Component. */
   pastSlot: ReactNode;
+  lang: Language;
 };
 
-export function EventsCalendar({ pastSlot }: Props) {
+export function EventsCalendar({ pastSlot, lang }: Props) {
+  const copy = siteCopy[lang].events;
+  const tabs: Tab[] = [
+    { id: "upcoming", label: copy.upcoming, kicker: copy.upcomingKicker, copy: copy.upcomingBody, publicUrl: "https://luma.com/vyvhouse", icon: CalendarDays },
+    { id: "past", label: copy.past, kicker: copy.pastKicker, copy: copy.pastBody, publicUrl: "https://luma.com/vyvhouse?period=past", icon: History },
+  ];
   const [active, setActive] = useState<EventsTab>("upcoming");
-  const activeTab = TABS.find((tab) => tab.id === active) ?? TABS[0];
+  const activeTab = tabs.find((tab) => tab.id === active) ?? tabs[0];
   const ActiveIcon = activeTab.icon;
 
   return (
     <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
       <div>
-        <div className="editorial-kicker editorial-kicker-pink signal-kicker-pink mb-5">events / calendar</div>
+        <div className="editorial-kicker editorial-kicker-pink signal-kicker-pink mb-5">{copy.label}</div>
         <h2 className="font-display text-4xl tracking-[-0.03em] md:text-6xl">
-          what is{" "}
+          {active === "upcoming" ? copy.next : copy.done}{" "}
           <span
             className={
               active === "upcoming"
@@ -57,13 +47,13 @@ export function EventsCalendar({ pastSlot }: Props) {
                 : "highlight-block-green"
             }
           >
-            {active === "upcoming" ? "happening next" : "already done"}
+            {active === "upcoming" ? copy.nextHighlight : copy.doneHighlight}
           </span>
         </h2>
         <p className="mt-5 max-w-xl text-sm leading-6 text-white/65 md:text-base">{activeTab.copy}</p>
 
-        <div role="tablist" aria-label="Event timeframe" className="events-tablist mt-7">
-          {TABS.map((tab) => {
+        <div role="tablist" aria-label={copy.timeframe} className="events-tablist mt-7">
+          {tabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = tab.id === active;
             return (
@@ -104,7 +94,7 @@ export function EventsCalendar({ pastSlot }: Props) {
           }`}
           style={{ borderRadius: "var(--radius-button)" }}
         >
-          Open on Luma
+          {copy.open}
           <ArrowUpRight size={16} aria-hidden="true" />
         </a>
       </div>
@@ -123,7 +113,7 @@ export function EventsCalendar({ pastSlot }: Props) {
             loading="lazy"
             allowFullScreen
             tabIndex={active === "upcoming" ? 0 : -1}
-            title="vyv.house upcoming events calendar"
+            title={lang === "ko" ? "vyv.house 예정 이벤트 캘린더" : "vyv.house upcoming events calendar"}
           />
           <div className="events-frame-noise" aria-hidden="true" />
         </div>

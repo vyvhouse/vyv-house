@@ -9,25 +9,32 @@ import { Story } from "@/components/home/Story";
 import { guestbookEntries } from "@/data/guestbook";
 import { residents } from "@/data/residents";
 import { fetchPastEvents } from "@/lib/luma";
+import type { Language } from "@/lib/i18n";
 import { EventsCalendar } from "./EventsCalendar";
 import { PastEventsGrid } from "./PastEventsGrid";
 
-export default async function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ lang?: string }>;
+}) {
+  const { lang: requestedLanguage } = await searchParams;
+  const lang: Language = requestedLanguage === "ko" ? "ko" : "en";
   const pastEvents = await fetchPastEvents();
 
   return (
-    <main id="top" className="living-system">
-      <Header />
-      <Hero residentCount={residents.length} />
-      <Story />
-      <Residents residents={residents} />
-      <Guestbook entries={guestbookEntries} />
-      <Protocol />
+    <main id="top" className="living-system" lang={lang}>
+      <Header lang={lang} />
+      <Hero residentCount={residents.length} lang={lang} />
+      <Story lang={lang} />
+      <Residents residents={residents} lang={lang} />
+      <Guestbook entries={guestbookEntries} lang={lang} />
+      <Protocol lang={lang} />
       <section id="events" className="system-section events-section">
         <SectionLabel index="04">RUNTIME / EVENTS</SectionLabel>
-        <EventsCalendar pastSlot={<PastEventsGrid events={pastEvents} />} />
+        <EventsCalendar lang={lang} pastSlot={<PastEventsGrid events={pastEvents} />} />
       </section>
-      <ContactAndFooter />
+      <ContactAndFooter lang={lang} />
     </main>
   );
 }

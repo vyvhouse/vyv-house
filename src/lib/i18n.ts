@@ -26,7 +26,7 @@ export const siteCopy = {
         { command: "sprint --resident", label: "Resident sprints", detail: "Different projects, one room, and momentum that travels sideways." },
       ],
     },
-    events: { label: "events / calendar", upcoming: "Upcoming", past: "Past", next: "what is", done: "what is", nextHighlight: "happening next", doneHighlight: "already done", timeframe: "Event timeframe", upcomingKicker: "live from luma", pastKicker: "what already happened", upcomingBody: "Upcoming dinners, demo nights, and resident sprints. RSVP straight from the embed.", pastBody: "A running log of nights, jams, and gatherings that have already gone down at vyv.house.", open: "Open on Luma" },
+    events: { label: "events / calendar", upcoming: "Upcoming", past: "Past", next: "what is", done: "what is", nextHighlight: "happening next", doneHighlight: "already done", timeframe: "Event timeframe", upcomingKicker: "live from luma", pastKicker: "what already happened", upcomingBody: "Upcoming dinners, demo nights, and resident sprints, synced directly from Luma.", pastBody: "A running log of nights, jams, and gatherings that have already gone down at vyv.house.", open: "Open on Luma", emptyTitle: "No upcoming events", emptyBody: "The next dinner, demo night, or resident sprint will appear here as soon as it is published.", hostedBy: "Hosted by" },
     contact: { label: "NEW SESSION?", headline: "Build from here.", body: "Applications, collaborations, visits, and dinner conversations all start with context.", location: "Seoul / exact location shared privately", listed: "Residents listed publicly", visits: "Visits open by context", footer: "A living system for people who build." },
   },
   ko: {
@@ -54,7 +54,7 @@ export const siteCopy = {
         { command: "sprint --resident", label: "거주자 스프린트", detail: "서로 다른 프로젝트가 한 공간에서 옆으로 전해지는 추진력을 얻습니다." },
       ],
     },
-    events: { label: "이벤트 / 캘린더", upcoming: "예정", past: "지난 이벤트", next: "다음에는", done: "함께한", nextHighlight: "무엇이 열릴까요", doneHighlight: "지난 시간들", timeframe: "이벤트 시점", upcomingKicker: "Luma에서 실시간 제공", pastKicker: "지나간 이벤트 기록", upcomingBody: "다가오는 저녁 모임, 데모 나이트, 거주자 스프린트를 확인하고 바로 참가 신청하세요.", pastBody: "VYV House에서 열렸던 밤, 잼 세션, 모임을 차곡차곡 기록합니다.", open: "Luma에서 열기" },
+    events: { label: "이벤트 / 캘린더", upcoming: "예정", past: "지난 이벤트", next: "다음에는", done: "함께한", nextHighlight: "무엇이 열릴까요", doneHighlight: "지난 시간들", timeframe: "이벤트 시점", upcomingKicker: "Luma에서 실시간 제공", pastKicker: "지나간 이벤트 기록", upcomingBody: "다가오는 저녁 모임, 데모 나이트, 거주자 스프린트를 Luma에서 바로 가져옵니다.", pastBody: "VYV House에서 열렸던 밤, 잼 세션, 모임을 차곡차곡 기록합니다.", open: "Luma에서 열기", emptyTitle: "예정된 이벤트가 없습니다", emptyBody: "다음 저녁 모임, 데모 나이트, 거주자 스프린트가 공개되는 즉시 이곳에 표시됩니다.", hostedBy: "호스트" },
     contact: { label: "새로운 세션?", headline: "여기서 시작하세요.", body: "입주 지원, 협업, 방문, 저녁 대화는 모두 서로의 맥락을 나누는 데서 시작합니다.", location: "서울 / 정확한 위치는 개별 안내", listed: "거주자 명단 공개", visits: "맥락이 맞는 방문 환영", footer: "만드는 사람들을 위한 살아 있는 시스템." },
   },
 } as const;

@@ -4,9 +4,6 @@ import { useState, type ReactNode } from "react";
 import { ArrowUpRight, CalendarDays, History } from "lucide-react";
 import { siteCopy, type Language } from "@/lib/i18n";
 
-const CAL_ID = "cal-hHz7R98dsv1Lf3z";
-const UPCOMING_EMBED_URL = `https://luma.com/embed/calendar/${CAL_ID}/events?lt=dark`;
-
 type EventsTab = "upcoming" | "past";
 
 type Tab = {
@@ -21,16 +18,18 @@ type Tab = {
 type Props = {
   /** Server-rendered grid of past events, passed in from the page Server Component. */
   pastSlot: ReactNode;
+  upcomingSlot: ReactNode;
+  hasUpcoming: boolean;
   lang: Language;
 };
 
-export function EventsCalendar({ pastSlot, lang }: Props) {
+export function EventsCalendar({ pastSlot, upcomingSlot, hasUpcoming, lang }: Props) {
   const copy = siteCopy[lang].events;
   const tabs: Tab[] = [
     { id: "upcoming", label: copy.upcoming, kicker: copy.upcomingKicker, copy: copy.upcomingBody, publicUrl: "https://luma.com/vyvhouse", icon: CalendarDays },
     { id: "past", label: copy.past, kicker: copy.pastKicker, copy: copy.pastBody, publicUrl: "https://luma.com/vyvhouse?period=past", icon: History },
   ];
-  const [active, setActive] = useState<EventsTab>("upcoming");
+  const [active, setActive] = useState<EventsTab>(hasUpcoming ? "upcoming" : "past");
   const activeTab = tabs.find((tab) => tab.id === active) ?? tabs[0];
   const ActiveIcon = activeTab.icon;
 
@@ -105,17 +104,9 @@ export function EventsCalendar({ pastSlot, lang }: Props) {
           role="tabpanel"
           aria-labelledby="events-tab-upcoming"
           hidden={active !== "upcoming"}
-          className="events-frame"
+          className="events-native-panel"
         >
-          <iframe
-            src={UPCOMING_EMBED_URL}
-            className="events-iframe is-active"
-            loading="lazy"
-            allowFullScreen
-            tabIndex={active === "upcoming" ? 0 : -1}
-            title={lang === "ko" ? "vyv.house 예정 이벤트 캘린더" : "vyv.house upcoming events calendar"}
-          />
-          <div className="events-frame-noise" aria-hidden="true" />
+          {upcomingSlot}
         </div>
 
         <div

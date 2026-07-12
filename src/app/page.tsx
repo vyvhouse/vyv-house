@@ -8,10 +8,10 @@ import { SectionLabel } from "@/components/home/Brand";
 import { Story } from "@/components/home/Story";
 import { guestbookEntries } from "@/data/guestbook";
 import { residents } from "@/data/residents";
-import { fetchPastEvents } from "@/lib/luma";
+import { fetchPastEvents, fetchUpcomingEvents } from "@/lib/luma";
 import type { Language } from "@/lib/i18n";
+import { EventGallery } from "@/components/home/EventGallery";
 import { EventsCalendar } from "./EventsCalendar";
-import { PastEventsGrid } from "./PastEventsGrid";
 
 export default async function Home({
   searchParams,
@@ -20,7 +20,10 @@ export default async function Home({
 }) {
   const { lang: requestedLanguage } = await searchParams;
   const lang: Language = requestedLanguage === "ko" ? "ko" : "en";
-  const pastEvents = await fetchPastEvents();
+  const [upcomingEvents, pastEvents] = await Promise.all([
+    fetchUpcomingEvents(),
+    fetchPastEvents(),
+  ]);
 
   return (
     <main id="top" className="living-system" lang={lang}>
@@ -32,7 +35,12 @@ export default async function Home({
       <Protocol lang={lang} />
       <section id="events" className="system-section events-section">
         <SectionLabel index="04">RUNTIME / EVENTS</SectionLabel>
-        <EventsCalendar lang={lang} pastSlot={<PastEventsGrid events={pastEvents} />} />
+        <EventsCalendar
+          lang={lang}
+          hasUpcoming={upcomingEvents.length > 0}
+          upcomingSlot={<EventGallery events={upcomingEvents} lang={lang} emptyState="upcoming" />}
+          pastSlot={<EventGallery events={pastEvents} lang={lang} emptyState="past" />}
+        />
       </section>
       <ContactAndFooter lang={lang} />
     </main>

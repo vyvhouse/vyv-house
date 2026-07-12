@@ -84,7 +84,7 @@ export function EventsCalendar({ pastSlot }: Props) {
           })}
         </div>
 
-        <div className="mt-5 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.24em] text-white/42">
+        <div className="events-meta mt-5 inline-flex items-center gap-2">
           <ActiveIcon
             size={14}
             className={active === "upcoming" ? "text-[#ff3b7c]" : "text-[#d4ff00]"}
@@ -97,7 +97,7 @@ export function EventsCalendar({ pastSlot }: Props) {
           href={activeTab.publicUrl}
           target="_blank"
           rel="noreferrer"
-          className={`mt-5 inline-flex items-center gap-2 border border-white/12 px-4 py-2 text-sm font-medium text-white transition${
+          className={`events-external mt-5 inline-flex items-center gap-2${
             active === "upcoming"
               ? " hover:border-[#ff3b7c]/55 hover:text-[#ff3b7c]"
               : " hover:border-[#d4ff00]/55 hover:text-[#d4ff00]"

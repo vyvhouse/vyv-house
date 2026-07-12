@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Black_Han_Sans, Do_Hyeon } from "next/font/google";
+import { IBM_Plex_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,21 +8,15 @@ const inter = Inter({
   weight: ["400", "500", "700", "900"],
 });
 
-const blackHanSans = Black_Han_Sans({
-  variable: "--font-black-han-sans",
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-ibm-plex-mono",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500", "600", "700"],
 });
 
-const doHyeon = Do_Hyeon({
-  variable: "--font-do-hyeon",
-  subsets: ["latin"],
-  weight: "400",
-});
-
-const metaTitle = "vyv-house — a house for builders with taste";
+const metaTitle = "VYV House — Live close. Build with focus.";
 const metaDescription =
-  "A vibey hacker house in Seoul for founders, researchers, designers, and internet-native builders to live close to the work.";
+  "A hacker house and builder residency in Seoul for people who live close to the work and ship in good company.";
 const ogImage = "/og/vyv-house-og.jpg";
 
 export const metadata: Metadata = {
@@ -46,7 +40,7 @@ export const metadata: Metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "vyv-house — a house for builders with taste",
+        alt: "VYV House — a hacker house and builder residency in Seoul",
       },
     ],
   },
@@ -69,11 +63,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${blackHanSans.variable} ${doHyeon.variable} antialiased`}
+      className={`${inter.variable} ${ibmPlexMono.variable} antialiased`}
     >
       <body
-        className="min-h-screen bg-black text-white"
-        style={{ fontFamily: "Inter, Pretendard, -apple-system, BlinkMacSystemFont, sans-serif" }}
+        className="min-h-screen"
       >
         {children}
       </body>

@@ -617,13 +617,6 @@ export const albumPhotos: AlbumPhoto[] = [
     "capturedAt": "2026-05-11T19:26:38Z"
   },
   {
-    "id": "img_6450",
-    "src": "/album/img_6450.webp",
-    "width": 1200,
-    "height": 1600,
-    "capturedAt": "2026-05-11T17:23:39Z"
-  },
-  {
     "id": "img_6422",
     "src": "/album/img_6422.webp",
     "width": 1200,
@@ -657,20 +650,6 @@ export const albumPhotos: AlbumPhoto[] = [
     "width": 1200,
     "height": 1600,
     "capturedAt": "2026-05-08T15:34:25Z"
-  },
-  {
-    "id": "img_6294",
-    "src": "/album/img_6294.webp",
-    "width": 1200,
-    "height": 1600,
-    "capturedAt": "2026-05-08T15:34:13Z"
-  },
-  {
-    "id": "img_6292",
-    "src": "/album/img_6292.webp",
-    "width": 1200,
-    "height": 1600,
-    "capturedAt": "2026-05-08T15:34:10Z"
   },
   {
     "id": "img_6291",

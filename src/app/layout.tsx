@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Inter, Noto_Serif_KR } from "next/font/google";
+import { Gowun_Batang, Hahmlet, IBM_Plex_Mono, Instrument_Serif, Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -14,10 +14,22 @@ const ibmPlexMono = IBM_Plex_Mono({
   weight: ["400", "500", "600", "700"],
 });
 
-const notoSerifKr = Noto_Serif_KR({
+const gowunBatang = Gowun_Batang({
   variable: "--font-korean-serif",
-  weight: "700",
+  weight: ["400", "700"],
   preload: false,
+});
+
+const hahmlet = Hahmlet({
+  variable: "--font-korean-editorial",
+  weight: "variable",
+  preload: false,
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 const metaTitle = "VYV House — Live close. Build with focus.";
@@ -69,7 +81,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${ibmPlexMono.variable} ${notoSerifKr.variable} antialiased`}
+      className={`${inter.variable} ${ibmPlexMono.variable} ${gowunBatang.variable} ${hahmlet.variable} ${instrumentSerif.variable} antialiased`}
     >
       <body
         className="min-h-screen"

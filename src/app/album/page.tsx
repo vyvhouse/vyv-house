@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Wordmark } from "@/components/home/Brand";
 import { albumPhotos } from "@/data/album";
 import type { Language } from "@/lib/i18n";
@@ -24,8 +24,8 @@ export default async function AlbumPage({ searchParams }: { searchParams: Promis
   const lang: Language = requestedLanguage === "ko" ? "ko" : "en";
   const groups = Map.groupBy(albumPhotos, (photo) => photo.capturedAt.slice(0, 7));
   const copy = lang === "ko"
-    ? { back: "홈으로", label: "VYV HOUSE / ARCHIVE", title: "하우스 앨범", intro: "함께 살고, 만들고, 나눈 시간들을 촬영일 순서로 기록합니다.", count: `${albumPhotos.length}장의 기록`, open: "크게 보기" }
-    : { back: "Back home", label: "VYV HOUSE / ARCHIVE", title: "House album", intro: "A chronological record of living, building, and sharing a house in Seoul.", count: `${albumPhotos.length} photographs`, open: "Open image" };
+    ? { back: "홈으로", label: "VYV HOUSE / ARCHIVE", title: "하우스 앨범", intro: "함께 살고, 만들고, 나눈 시간들을 촬영일 순서로 기록합니다.", count: `${albumPhotos.length}장의 기록`, open: "크게 보기", closing: "집은 함께 만든 순간들로 기억됩니다.", closingLabel: "VYV HOUSE / SEOUL" }
+    : { back: "Back home", label: "VYV HOUSE / ARCHIVE", title: "House album", intro: "A chronological record of living, building, and sharing a house in Seoul.", count: `${albumPhotos.length} photographs`, open: "Open image", closing: "A house is remembered through the moments made together.", closingLabel: "VYV HOUSE / SEOUL" };
 
   return (
     <main className="album-page" lang={lang}>
@@ -64,7 +64,7 @@ export default async function AlbumPage({ searchParams }: { searchParams: Promis
                       alt=""
                       width={photo.width}
                       height={photo.height}
-                      sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"
+                      sizes="(max-width: 700px) 45vw, (max-width: 1100px) 50vw, 33vw"
                       loading={groupIndex === 0 && index < 4 ? "eager" : "lazy"}
                     />
                     <ArrowUpRight size={14} />
@@ -79,6 +79,14 @@ export default async function AlbumPage({ searchParams }: { searchParams: Promis
           </section>
         ))}
       </div>
+
+      <section className="album-closing">
+        <div>
+          <span>{copy.closingLabel}</span>
+          <h2>{copy.closing}</h2>
+          <Link href={lang === "ko" ? "/?lang=ko" : "/"}>{copy.back} <ArrowRight size={15} /></Link>
+        </div>
+      </section>
     </main>
   );
 }

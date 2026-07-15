@@ -18,7 +18,9 @@ export function Guestbook({ entries, lang }: { entries: GuestbookEntry[]; lang: 
               {entry.avatarUrl ? <img src={entry.avatarUrl} alt="" width="48" height="48" loading="lazy" /> : null}
               <div><strong>{entry.name}</strong><span>{entry.title ?? copy.guest}</span></div>
             </div>
-            <blockquote className={/[가-힣]/.test(entry.note) ? "is-korean" : undefined} lang={/[가-힣]/.test(entry.note) ? "ko" : undefined}>“{entry.note}”</blockquote>
+            <blockquote className={/[가-힣]/.test(entry.note) ? "is-korean" : undefined} lang={/[가-힣]/.test(entry.note) ? "ko" : undefined}>
+              <span className="quote-mark" aria-hidden="true">“</span>{entry.note}<span className="quote-mark" aria-hidden="true">”</span>
+            </blockquote>
             <div className="log-foot"><div>{entry.tags?.slice(0, 3).map((tag) => <span key={tag}>#{tag.replaceAll(" ", "-")}</span>)}</div>{entry.githubUrl ? <a href={entry.githubUrl} target="_blank" rel="noreferrer" aria-label={`${entry.name} on GitHub`}><ArrowUpRight size={16} /></a> : null}</div>
           </li>
         ))}

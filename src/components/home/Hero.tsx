@@ -1,5 +1,4 @@
-import { ArrowUpRight, Copy, MapPin } from "lucide-react";
-import { HouseGallery } from "./HouseGallery";
+import { ArrowDown, ArrowUpRight, MapPin } from "lucide-react";
 import { siteCopy, type Language } from "@/lib/i18n";
 import Link from "next/link";
 
@@ -8,36 +7,36 @@ export function Hero({ residentCount, lang }: { residentCount: number; lang: Lan
   return (
     <>
       <section className="hero-system">
+        <video
+          className="hero-film"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/photos/house-dinner.webp"
+          aria-hidden="true"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div className="hero-film-wash" />
         <div className="cursor-heading">
           <span>{hero.label}</span>
           <h1>{hero.title}</h1>
-          <p>{hero.subtitle}</p>
-          <small>{hero.description}</small>
+          <p><em>{hero.subtitle}</em></p>
         </div>
-        <div className="cursor-stage">
-          <div className="cursor-stage-copy">
-            <div className="stage-copy-top">
-              <span>HOUSE_001</span>
-              <span><i /> {residentCount} {hero.online}</span>
+        <div className="hero-foot">
+          <div className="hero-intro">
+            <p>{hero.body}</p>
+            <div className="hero-actions">
+              <a href="#contact" className="hero-primary">{lang === "ko" ? "함께하기" : "Join the house"} <ArrowUpRight size={15} /></a>
+              <Link href={lang === "ko" ? "/album?lang=ko" : "/album"} className="hero-secondary">{hero.cta}</Link>
             </div>
-            <div className="stage-copy-main">
-              <h2>{hero.headline}</h2>
-              <p>{hero.body}</p>
-            </div>
-            <div className="stage-command">
-              <code>vyv join --seoul</code>
-              <Copy size={15} aria-hidden="true" />
-            </div>
-            <div className="stage-location"><MapPin size={14} /> {hero.location}</div>
           </div>
-          <div className="cursor-stage-media">
-            <HouseGallery />
-            <div className="media-wash" />
-            <div className="media-label"><span>LIVE FROM THE HOUSE</span><span>FRAME_001—004</span></div>
-            <Link href={lang === "ko" ? "/album?lang=ko" : "/album"} className="media-cta">
-              {hero.cta} <ArrowUpRight size={15} />
-            </Link>
+          <div className="hero-meta">
+            <span><MapPin size={13} /> {hero.location}</span>
+            <span>{residentCount} {hero.online}</span>
           </div>
+          <a className="hero-scroll" href="#residents" aria-label={lang === "ko" ? "계속 보기" : "Explore the house"}><ArrowDown size={18} /></a>
         </div>
       </section>
       <section className="proof-strip" aria-label="House summary">
